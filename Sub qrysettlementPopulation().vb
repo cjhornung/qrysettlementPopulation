@@ -15,7 +15,8 @@ Sub qrysettlementPopulation()
         If distribution_tbl.DataBodyRange(i, 1) = qrySettlement_tbl.DataBodyRange(j, 1) Then
             
         End If
-        For j = 1 To qry_cases - 1
+        'j=i for the nested for loop because the output from the Needles database is always in alphabetical order and the distribution spreadsheet should also always be in alphabetical order
+        For j = i To qry_cases
             If distribution_tbl.DataBodyRange(i, 1) = qrySettlement_tbl.DataBodyRange(j, 1) Then
                 'Class
                 distribution_tbl.DataBodyRange(i, 2) = qrySettlement_tbl.DataBodyRange(j, 7)
